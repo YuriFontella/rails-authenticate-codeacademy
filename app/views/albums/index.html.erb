@@ -1,0 +1,19 @@
+<div class="albums">
+  <div class="container">
+
+    <div class="row">
+      <% @albums.each do |album| %> 
+        <div class="item col-md-4">
+          <div class="img-container">
+            <%= image_tag album.image %>
+          </div>
+          <div class="album-info">
+            <h2><%= album.title %></h2>
+            <p><%= link_to "See Album", album_path(album) %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

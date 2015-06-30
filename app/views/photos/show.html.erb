@@ -1,0 +1,16 @@
+<div class="img_container">
+  <%= image_tag @photo.image %>
+</div>
+<div class="photo-info">
+  <p class="caption"><%= @photo.caption %></p>
+</div>
+
+<% if current_user && current_user.editor? %>
+  <p class="recipe-edit">
+    <%= link_to "Edit Photo", edit_photo_path(@photo.id) %>
+  </p>
+<% end %>
+
+<% if current_user && current_user.admin? %> 
+  <p class="photo-delete"><%= link_to "Delete", photo_path(@photo), method: "delete" %><p>
+<% end %>

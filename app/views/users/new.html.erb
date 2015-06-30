@@ -1,0 +1,15 @@
+<div class="login">
+  <div class="container">
+    <div class="form">
+
+    <h1>Cadastre-se</h1>
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :first_name, :placeholder => "Nome" %>
+      <%= f.text_field :last_name, :placeholder => "Sobrenome" %>
+      <%= f.text_field :email, :placeholder => "E-mail" %>
+      <%= f.password_field :password, :placeholder => "Senha" %>
+      <%= f.submit "Cadastrar" %>
+    <% end %>
+    </div>
+  </div>
+</div>

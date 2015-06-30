@@ -1,0 +1,20 @@
+<div class="photos">
+  <div class="container">
+
+    <h1>Album de fotos: <%= @album.title %></h1>
+    <div class="row">
+      <% @photos.each do |photo| %>
+        <div class="item col-md-4">
+          <div class="img-container">
+            <%= image_tag photo.image %>
+          </div>
+          <div class="photo-info">
+            <p><%= photo.caption %></p>
+            <p class="photo-link"><%= link_to "Show Photo", photo_path(photo) %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
